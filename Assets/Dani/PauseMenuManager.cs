@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
-    public GameObject pauseMenuCanvas; // Assign your Canvas in the Inspector
-    public MonoBehaviour cameraController; // Assign the camera movement script here (e.g., CameraController)
+    public GameObject pauseMenuCanvas;  
+    public MonoBehaviour cameraController;  
+    public Controller player;
     private bool isPaused = false;
 
     void Update()
@@ -24,12 +25,14 @@ public class PauseManager : MonoBehaviour
 
     public void PauseGame()
     {
-        // Show the pause menu and pause time
         pauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
 
-        // Disable the camera controller to lock the camera
+        player.canMove = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         if (cameraController != null)
         {
             cameraController.enabled = false;
@@ -38,12 +41,14 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        // Hide the pause menu and resume time
         pauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
 
-        // Enable the camera controller to unlock the camera
+        player.canMove = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         if (cameraController != null)
         {
             cameraController.enabled = true;
@@ -52,8 +57,7 @@ public class PauseManager : MonoBehaviour
 
     public void QuitGame()
     {
-        // Quit the application
-        Debug.Log("Quitting the game..."); // This message shows in the editor for testing
-        Application.Quit(); // This will quit the game in a built application
+        Debug.Log("Quitting the game...");
+        Application.Quit();
     }
 }
