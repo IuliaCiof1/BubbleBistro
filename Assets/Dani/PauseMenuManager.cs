@@ -1,27 +1,14 @@
 using UnityEngine;
 
-public class PauseMenuManager : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenuCanvas; // Assign the pause menu canvas in the inspector
-
+    public GameObject pauseMenuCanvas; // Assign your Canvas in the Inspector
+    public MonoBehaviour cameraController; // Assign the camera movement script here (e.g., CameraController)
     private bool isPaused = false;
-
-    void Start()
-    {
-        // Ensure the pause menu is hidden when the game starts
-        if (pauseMenuCanvas != null)
-        {
-            pauseMenuCanvas.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("Pause Menu Canvas is not assigned in the inspector.");
-        }
-    }
 
     void Update()
     {
-        // Listen for the Escape key to toggle the pause menu
+        // Listen for Escape key press
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -37,40 +24,36 @@ public class PauseMenuManager : MonoBehaviour
 
     public void PauseGame()
     {
-        if (pauseMenuCanvas != null)
+        // Show the pause menu and pause time
+        pauseMenuCanvas.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+
+        // Disable the camera controller to lock the camera
+        if (cameraController != null)
         {
-            pauseMenuCanvas.SetActive(true); // Show the pause menu
-            Time.timeScale = 0f; // Pause the game physics and animations
-            isPaused = true;
-
-
-
-            // Optional: Lock the cursor
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            cameraController.enabled = false;
         }
     }
 
     public void ResumeGame()
     {
-        if (pauseMenuCanvas != null)
+        // Hide the pause menu and resume time
+        pauseMenuCanvas.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+
+        // Enable the camera controller to unlock the camera
+        if (cameraController != null)
         {
-            pauseMenuCanvas.SetActive(false); // Hide the pause menu
-            Time.timeScale = 1f; // Resume the game physics and animations
-            isPaused = false;
-
-
-
-            // Optional: Unlock the cursor
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            cameraController.enabled = true;
         }
     }
 
     public void QuitGame()
     {
-        // This method can be hooked up to a Quit button in the pause menu
-        Debug.Log("Quitting game...");
-        Application.Quit(); // Quit the application (works only in the built version)
+        // Quit the application
+        Debug.Log("Quitting the game..."); // This message shows in the editor for testing
+        Application.Quit(); // This will quit the game in a built application
     }
 }
