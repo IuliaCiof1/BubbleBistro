@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class SurvivalMeter : MonoBehaviour
 {
     public Slider slider; 
-    public float timerDuration = 300f; 
-
+    public float timerDuration = 300f;
+    public GameObject endMenuCanvas;
     private float currentTime; 
 
     void Start()
@@ -34,7 +34,10 @@ public class SurvivalMeter : MonoBehaviour
             if (currentTime != 0) 
             {
                 Debug.Log("You won!");
-                currentTime = 0; 
+                currentTime = 0;
+                endMenuCanvas.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
