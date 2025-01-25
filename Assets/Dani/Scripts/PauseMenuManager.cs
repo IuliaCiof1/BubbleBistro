@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
-    public GameObject pauseMenuCanvas;  
-    public GameObject endMenuCanvas;  
-    public MonoBehaviour cameraController;  
+    public GameObject pauseMenuCanvas;
+    public GameObject endMenuCanvas;
+    public MonoBehaviour cameraController;
     public Controller player;
     private bool isPaused = false;
 
