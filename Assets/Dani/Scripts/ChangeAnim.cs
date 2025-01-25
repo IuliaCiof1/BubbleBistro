@@ -16,22 +16,20 @@ public class AnimationOnClick : MonoBehaviour
 
     void Update()
     {
-        // Check if the left mouse button (or primary touch) is pressed
-        if (Input.GetMouseButtonDown(0)) // 0 is for the left mouse button
+    
+        if (Input.GetMouseButtonDown(0)) 
         {
             if (animator != null)
             {
-                // Set the bool parameter to true
+           
                 animator.SetBool(boolParameterName, true);
             }
         }
 
-        // Check if the left mouse button is released
-        if (Input.GetMouseButtonUp(0)) // 0 is for the left mouse button
+        if (Input.GetMouseButtonUp(0)) 
         {
             if (animator != null)
             {
-                // Set the bool parameter to false
                 animator.SetBool(boolParameterName, false);
             }
         }
