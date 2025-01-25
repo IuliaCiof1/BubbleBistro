@@ -5,7 +5,7 @@ public class Sink : MonoBehaviour
     private int dishesInSink;
     private int maxDishesInSink = 3;
 
-    public void PutDishInSink()
+    public bool PutDishInSink()
     {
         if (dishesInSink < maxDishesInSink)
         {
@@ -20,12 +20,20 @@ public class Sink : MonoBehaviour
                 }
             }
 
+            return true;
         }
 
         else
+        {
             Debug.Log("Sink full");
+            return false;
+        }
     }
 
+    public void ResetDishesInSink()
+    {
+        dishesInSink = 0;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
