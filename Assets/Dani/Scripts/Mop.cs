@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MopBehavior : MonoBehaviour
 {
-    public string dirtTag = "Dirt"; // Tag to identify dirt objects
+    public string dirtTag = "Bubble"; // Tag to identify dirt objects
     private float cleaningTime = 3f; // Total time required to clean the dirt
     private float accumulatedCleaningTime = 0f; // Tracks accumulated cleaning time
     private GameObject currentDirt = null; // Tracks the dirt object being cleaned

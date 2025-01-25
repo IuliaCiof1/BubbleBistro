@@ -60,4 +60,9 @@ public class PauseManager : MonoBehaviour
         Debug.Log("Quitting the game...");
         Application.Quit();
     }
+    public void ReturnToMainMenu()
+    {
+        Debug.Log("Returning to the main menu...");
+        //SceneManager.LoadScene("Main Menu");
+    }
 }

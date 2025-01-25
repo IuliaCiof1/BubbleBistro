@@ -1,51 +1,61 @@
 using UnityEngine;
 
-public class GunScript : MonoBehaviour
+public class BubbleGun : MonoBehaviour
 {
-    public GameObject bubblePrefab;
-    public float bubbleSpeed = 20f;
-    public GameObject placedBubblePrefab;
-    public Camera fpsCamera;
-    public float maxShootDistance = 20f;
+    public GameObject bubblePrefab;  // Reference to the bubble prefab
+    public float bubbleRadius = 1.5f; // Radius within which we will check for existing bubbles
+    public float placementDelay = 0.1f;  // Delay to avoid continuous bubble placement
+
+    private bool canPlaceBubble = true;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && canPlaceBubble)  // Left Mouse Button (0)
         {
-            ShootBubbles();
+            canPlaceBubble = false; // Disable placement for a short period (debounce)
+
+            // Raycast from the camera to the mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 hitPoint = hit.point;
+
+                // Check if there's already a bubble close to the hit point
+                if (!IsBubbleAtPosition(hitPoint))
+                {
+                    // Create the bubble at the hit position
+                    Instantiate(bubblePrefab, hitPoint, Quaternion.identity);
+                }
+            }
+
+            // Allow bubble placement after the delay
+            Invoke("ResetPlacement", placementDelay);
         }
     }
 
-    void ShootBubbles()
+    // Function to check if there's a bubble already placed at the position
+    bool IsBubbleAtPosition(Vector3 position)
     {
-        GameObject bubble = Instantiate(bubblePrefab, transform.position, transform.rotation);
-        Rigidbody bubbleRB = bubble.GetComponent<Rigidbody>();
-        bubbleRB.linearVelocity = fpsCamera.transform.forward * bubbleSpeed;
+        // Find all the bubbles in the scene
+        GameObject[] bubbles = GameObject.FindGameObjectsWithTag("Bubble");
 
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, maxShootDistance))
+        foreach (GameObject bubble in bubbles)
         {
-            if (hit.collider != null)
+            // Check the distance between the position and each bubble
+            if (Vector3.Distance(bubble.transform.position, position) < bubbleRadius)
             {
-                ShitStain_Cleanable cleanable = hit.collider.GetComponent<ShitStain_Cleanable>();
-                if (cleanable != null)
-                {
-                    cleanable.CleanMess();
-                }
-                else
-                {
-                    PlaceBubbles(hit.point, hit.normal);
-                }
-
-                Destroy(bubble);
+                return true; // A bubble is already placed near the position
             }
         }
+
+        return false; // No bubble found at the position
     }
 
-    void PlaceBubbles(Vector3 position, Vector3 normal)
+    // Reset placement flag after the delay
+    void ResetPlacement()
     {
-        GameObject bulletHole = Instantiate(placedBubblePrefab, position, Quaternion.LookRotation(normal));
-
-        Destroy(bulletHole, 5f);
+        canPlaceBubble = true;
     }
 }
