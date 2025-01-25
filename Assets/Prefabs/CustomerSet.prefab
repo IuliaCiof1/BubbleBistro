@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sittingOffset: {x: 0, y: 0.308, z: 0.048}
+  smokeEffect: {fileID: 0}
 --- !u!1001 &2094233980896954134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -356,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sittingOffset: {x: 0, y: 0.308, z: 0.048}
+  smokeEffect: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!1001 &7401207318100164749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480,6 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sittingOffset: {x: 0, y: 0.308, z: 0.048}
+  smokeEffect: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!1001 &7596051918199277809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -681,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sittingOffset: {x: 0, y: 0.308, z: 0.048}
+  smokeEffect: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!4 &7642805598261825164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd605621bb4053e43aef5e7a1e02cd8c, type: 3}
@@ -801,6 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sittingOffset: {x: 0, y: 0.308, z: 0.048}
+  smokeEffect: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!4 &4222598852391364584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4968002173159936299, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}

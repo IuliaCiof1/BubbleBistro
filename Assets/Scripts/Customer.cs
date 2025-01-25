@@ -8,6 +8,8 @@ public class Customer : MonoBehaviour
     private float timeAtTable;
     Animator animator;
 
+    [SerializeField] GameObject smokeEffect;
+
     private void OnEnable()
     {
         Invoke(nameof(SitAtTable), 0.9f);
@@ -38,6 +40,10 @@ public class Customer : MonoBehaviour
 
     void LeaveTable()
     {
+        GameObject particles =  Instantiate(smokeEffect);
+        particles.transform.position = transform.position;
+        particles.GetComponent<ParticleSystem>().Play();
+
         Destroy(gameObject);
     }
 }
