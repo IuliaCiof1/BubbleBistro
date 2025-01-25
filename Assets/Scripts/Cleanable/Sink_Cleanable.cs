@@ -25,9 +25,12 @@ public class Sink_Cleanable : ICleanable
         {
             if (sinkDirty.GetChild(i).gameObject.activeSelf)
             {
+                Stats.mess--;
                 sinkDirty.GetChild(i).gameObject.SetActive(false);
                 dishRack.GetChild(i).gameObject.SetActive(true);
             }
+
+            
 
             yield return new WaitForSeconds(waitTime / sinkDirty.childCount);
         }

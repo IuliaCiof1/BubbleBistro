@@ -8,6 +8,7 @@ public class ShitStain_Cleanable : ICleanable
     public override void CleanMess()
     {
         GetComponent<Renderer>().material = cleanMaterial;
+        Stats.mess--;
     }
 
     public override void SpawnMess()
