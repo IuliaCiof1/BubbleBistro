@@ -46,6 +46,6 @@ public class BubbleGunScript : MonoBehaviour
     {
         GameObject bulletHole = Instantiate(bulletHolePrefab, position, Quaternion.LookRotation(normal));
 
-        Destroy(bulletHole, 5f);
+        Destroy(bulletHole, 3f);
     }
 }

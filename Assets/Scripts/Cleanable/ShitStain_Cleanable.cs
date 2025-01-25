@@ -20,4 +20,14 @@ public class ShitStain_Cleanable : ICleanable
             GetComponent<SpriteRenderer>().enabled = true;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bubble"))
+        {
+            print("Shit");
+            gameObject.tag = "Bubble";
+            other.isTrigger = true;
+            Debug.Log("Tag changed to " + "Bubble");
+        }
+    }
 }

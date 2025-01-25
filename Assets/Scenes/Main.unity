@@ -756,6 +756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39208956}
   - component: {fileID: 39208957}
+  - component: {fileID: 39208958}
   m_Layer: 5
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -805,6 +806,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 461810465}
   externalValue: 0
+--- !u!114 &39208958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39208955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d32f326a56eb0342a5f82fed0c4961e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 776573810}
+  timerDuration: 300
 --- !u!1 &49381019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,7 +1645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7035927048936643330, guid: 4ae438be738383c4680e0d3bd8c19a9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.188
+      value: -0.176
       objectReference: {fileID: 0}
     - target: {fileID: 7035927048936643330, guid: 4ae438be738383c4680e0d3bd8c19a9f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5912,7 +5927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &410641363
 Transform:
   m_ObjectHideFlags: 0
@@ -5946,8 +5961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efb06fcec0cc1545aaf335c0bcc1056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePrefab: {fileID: 5013225120025489986, guid: 2a6253cecda1d4e45862dd6a064c58b1, type: 3}
-  bubbleRadius: 0.4
+  bubblePrefab: {fileID: 6750626243480787636, guid: 0e56da6fa1f24424cbf0684304450ab7, type: 3}
+  bubbleRadius: 0.2
   placementDelay: 0.1
 --- !u!114 &410641366
 MonoBehaviour:
@@ -6120,6 +6135,10 @@ PrefabInstance:
     - target: {fileID: 7035927048936643330, guid: 4ae438be738383c4680e0d3bd8c19a9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968331882128004146, guid: 4ae438be738383c4680e0d3bd8c19a9f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7786,8 +7805,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511858817}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5013252, y: -0.023921024, z: -0.01574539, w: 0.86478496}
-  m_LocalPosition: {x: 0.32396698, y: -0.4587345, z: 0.9549928}
+  m_LocalRotation: {x: -0.61317, y: -0.021583848, z: -0.018822065, w: 0.78943163}
+  m_LocalPosition: {x: 0.32260323, y: -0.34307098, z: 0.9853158}
   m_LocalScale: {x: 0.051248528, y: 0.051248528, z: 0.051248528}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7832,7 +7851,7 @@ Transform:
   - {fileID: 357544586}
   - {fileID: 857294943}
   m_Father: {fileID: 369916339}
-  m_LocalEulerAnglesHint: {x: -60.207, y: -2.952, z: -0.375}
+  m_LocalEulerAnglesHint: {x: -75.679, y: -2.548, z: -0.752}
 --- !u!54 &511858819
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7856,7 +7875,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -7879,8 +7898,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.554373, y: 9.752594, z: 6.0178294}
-  m_Center: {x: 0.7969295, y: -4.376293, z: 0.50978434}
+  m_Size: {x: 31.579376, y: 24.80819, z: 20.04079}
+  m_Center: {x: 0.7583185, y: -11.90413, z: 1.9241507}
 --- !u!114 &511858821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7893,7 +7912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a709147b0808942a4bec120d488fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtTag: Dirt
+  dirtTag: Bubble
 --- !u!114 &511858822
 MonoBehaviour:
   m_ObjectHideFlags: 0

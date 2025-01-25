@@ -21,8 +21,6 @@ public class BubbleGun : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Vector3 hitPoint = hit.point;
-
-                // Check if there's already a bubble close to the hit point
                 if (!IsBubbleAtPosition(hitPoint))
                 {
                     // Create the bubble at the hit position
