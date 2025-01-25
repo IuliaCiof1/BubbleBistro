@@ -1,12 +1,13 @@
 using UnityEngine;
 
 public class ShitStain_Cleanable : ICleanable
-{ 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-   
+{
+    public Material cleanMaterial; // The material to apply when cleaned
+    private Material originalMaterial;
+
     public override void CleanMess()
     {
-      
+        GetComponent<Renderer>().material = cleanMaterial;
     }
 
     public override void SpawnMess()
