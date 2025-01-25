@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Sink_Cleanable : MonoBehaviour, ICleanable
+public class Sink_Cleanable : ICleanable
 {
     [SerializeField] private GameObject sinkRunning;
     [SerializeField] private Transform sinkDirty;
@@ -10,18 +10,8 @@ public class Sink_Cleanable : MonoBehaviour, ICleanable
 
     [SerializeField] private float waitTime;
 
-    private void OnEnable()
-    {
-        SpawnMessWave.SpawnMess += SpawnMess;
-    }
 
-
-    private void OnDisable()
-    {
-        SpawnMessWave.SpawnMess -= SpawnMess;
-    }
-
-    public void CleanMess()
+    public override void CleanMess()
     {
         sinkRunning.SetActive(true);
 
@@ -46,7 +36,7 @@ public class Sink_Cleanable : MonoBehaviour, ICleanable
         sinkDirty.GetComponent<Sink>().ResetDishesInSink();
     }
 
-    public void SpawnMess()
+    public override void SpawnMess()
     {
         StartCoroutine(TakePlate());
     }

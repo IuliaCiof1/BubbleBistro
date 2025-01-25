@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Plate_Cleanable : MonoBehaviour, ICleanable
+public class Plate_Cleanable : ICleanable
 {
     [SerializeField] private GameObject platesPrefab;
     [SerializeField] private Sink sink;
@@ -8,29 +8,14 @@ public class Plate_Cleanable : MonoBehaviour, ICleanable
 
     private GameObject plates;
 
-    private void Start()
-    {
-
-    }
-
-    private void OnEnable()
-    {
-        SpawnMessWave.SpawnMess += SpawnMess;
-    }
-
-
-    private void OnDisable()
-    {
-        SpawnMessWave.SpawnMess -= SpawnMess;
-    }
-
-    public void CleanMess()
+   
+    public override void CleanMess()
     {
         if (plates != null && sink.PutDishInSink())
             Destroy(plates);
     }
 
-    public void SpawnMess()
+    public override void SpawnMess()
     {
         print("spawn mess");
 
@@ -45,5 +30,5 @@ public class Plate_Cleanable : MonoBehaviour, ICleanable
         }
     }
 
-
+  
 }

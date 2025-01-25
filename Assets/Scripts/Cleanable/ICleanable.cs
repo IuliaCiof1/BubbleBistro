@@ -1,9 +1,18 @@
 using UnityEngine;
 
-public interface ICleanable
+public abstract class ICleanable:MonoBehaviour
 {
-    void SpawnMess();
-    void CleanMess();
+    public abstract void SpawnMess();
+    public abstract void CleanMess();
+
+    private void OnEnable()
+    {
+        SpawnMessWave.SpawnMess += SpawnMess;
+    }
 
 
+    private void OnDisable()
+    {
+        SpawnMessWave.SpawnMess -= SpawnMess;
+    }
 }
