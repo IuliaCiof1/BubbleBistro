@@ -17,7 +17,8 @@ public class MopBehavior : MonoBehaviour
             // Check if the total cleaning time is reached
             if (accumulatedCleaningTime >= cleaningTime)
             {
-                Destroy(currentDirt); // Destroy the dirt object
+                //Destroy(currentDirt); // Destroy the dirt object
+                currentDirt.GetComponent<SpriteRenderer>().enabled = false;
                 ResetCleaning();
             }
         }
