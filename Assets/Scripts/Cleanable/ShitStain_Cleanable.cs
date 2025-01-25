@@ -26,7 +26,7 @@ public class ShitStain_Cleanable : ICleanable
         {
             print("Shit");
             gameObject.tag = "Bubble";
-            other.isTrigger = true;
+            GetComponent<BoxCollider>().isTrigger = true;
             Debug.Log("Tag changed to " + "Bubble");
         }
     }
