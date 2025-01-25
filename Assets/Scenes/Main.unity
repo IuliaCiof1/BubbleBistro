@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 776573810}
-  timerDuration: 1
+  timerDuration: 300
   endMenuCanvas: {fileID: 338173129}
   player: {fileID: 808842031}
 --- !u!1 &49381019
