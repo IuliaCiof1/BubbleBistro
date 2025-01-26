@@ -5,21 +5,52 @@ public class SliderUpdater : MonoBehaviour
 {
     
     public Slider slider;
-    public float externalValue = 0.0f; 
+    public float externalValue = 0.0f;
+    public GameObject endMenuCanvas;
+    public Controller player;
+
 
     void Update()
     {
-        if (slider != null)
+        if (Stats.mess <= slider.maxValue)
+        {
+            if (slider != null)
+            {
+                slider.value = Stats.mess;
+            }
+        }
+        else
         {
             slider.value = Stats.mess;
+            Debug.Log("You lost!");
+            Time.timeScale = 0f;
+            endMenuCanvas.SetActive(true);
+            player.canMove = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+
         }
     }
 
     public void UpdateSliderValue(float newValue)
     {
-        if (slider != null)
+        print(newValue + " value " + slider.maxValue);
+        if(newValue < slider.maxValue)
+            if (slider != null)
+            {
+                slider.value = newValue;
+            }
+        else
         {
-            slider.value = newValue;
+            
+                Debug.Log("You lost!");
+                Time.timeScale = 0f;
+                endMenuCanvas.SetActive(true);
+                player.canMove = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            
         }
     }
 }

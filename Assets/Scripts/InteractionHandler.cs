@@ -17,6 +17,11 @@ public class InteractionHandler : MonoBehaviour
             {
                 cleanableObj.CleanMess();
             }
+
+            if (currentTarget && currentTarget.TryGetComponent(out Sink_Cleanable cleanableObjSink))
+            {
+                cleanableObjSink.CleanMess();
+            }
         }
     }
 

@@ -27,7 +27,7 @@ public class CustomerManager : MonoBehaviour
             if (obj.name.ToLower().Contains("chair")) // Check if the name contains "chair" (case-insensitive)
             {
                 chairs.Add(obj); // Add to the list
-                Debug.Log("Found chair: " + obj.name);
+                
             }
         }
        
