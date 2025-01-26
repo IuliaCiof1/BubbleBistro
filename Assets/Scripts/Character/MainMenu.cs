@@ -27,6 +27,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Stats.mess = 0;
+        CustomerManager.chairs.Clear();
         StartCoroutine(FadeOutAndLoadScene("Main"));
     }
 
