@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_B (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3de51de6c9653404fa6ce2dd148e9b1d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12363,7 +12367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayPosition: {fileID: 1597711329}
-  distance: 1.4
+  distance: 1.8
 --- !u!1 &808847647 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b891540289533849940aaf611351254, type: 3}
@@ -14277,6 +14281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_B (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3de51de6c9653404fa6ce2dd148e9b1d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15139,6 +15147,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3de51de6c9653404fa6ce2dd148e9b1d, type: 3}
       propertyPath: m_Name
       value: chair_B (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3de51de6c9653404fa6ce2dd148e9b1d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19523,6 +19535,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveInterval: 20
+  intervalDecreaseRate: 2
+  minWaveInterval: 5
+  currentWaveInterval: 0
 --- !u!1001 &1281583559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30735,6 +30750,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3de51de6c9653404fa6ce2dd148e9b1d, type: 3}
       propertyPath: m_Name
       value: chair_B (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3de51de6c9653404fa6ce2dd148e9b1d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

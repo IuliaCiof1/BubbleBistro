@@ -13,7 +13,7 @@ public class InteractionHandler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(currentTarget && currentTarget.TryGetComponent(out ICleanable cleanableObj))
+            if(currentTarget && currentTarget.TryGetComponent(out Plate_Cleanable cleanableObj))
             {
                 cleanableObj.CleanMess();
             }
@@ -22,7 +22,9 @@ public class InteractionHandler : MonoBehaviour
 
     void GetTarget()
     {
-        if (Physics.Raycast(rayPosition.position, Camera.main.transform.TransformDirection(Vector3.forward), out RaycastHit hitInfo, distance))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Camera.main.transform.TransformDirection(Vector3.forward), out RaycastHit hitInfo, distance)
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, distance))
         {
             GameObject hitObject = hitInfo.collider.gameObject;
 
@@ -35,7 +37,7 @@ public class InteractionHandler : MonoBehaviour
             }
         }
 
-        Debug.DrawRay(rayPosition.position, transform.TransformDirection(Vector3.forward) * distance, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * distance, Color.red);
     }
 
 }
