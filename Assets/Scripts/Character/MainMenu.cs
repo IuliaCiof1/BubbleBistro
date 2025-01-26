@@ -16,6 +16,8 @@ public class MainMenu : MonoBehaviour
     #region - Default Methods
     void Start()
     {
+        
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -24,6 +26,7 @@ public class MainMenu : MonoBehaviour
     #region - Methods
     public void Play()
     {
+        Stats.mess = 0;
         StartCoroutine(FadeOutAndLoadScene("Main"));
     }
 

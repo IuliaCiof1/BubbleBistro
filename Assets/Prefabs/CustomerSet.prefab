@@ -308,9 +308,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5744960398010960785, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1359587062656277900}
-    - targetCorrespondingSourceObject: {fileID: 5744960398010960785, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6839111038236248459}
   m_SourcePrefab: {fileID: 100100000, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}
 --- !u!4 &2311109468770192708 stripped
 Transform:
@@ -344,20 +341,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6839111038236248459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3123639407083952126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8aea6f72588b148a1c8b00abbf8d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sittingOffset: {x: 0, y: 0.308, z: 0.048}
-  smokeEffect: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!1001 &7401207318100164749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,9 +744,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5744960398010960785, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3793030154018543917}
-    - targetCorrespondingSourceObject: {fileID: 5744960398010960785, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7498245962061015156}
   m_SourcePrefab: {fileID: 100100000, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}
 --- !u!1 &3590072470925884754 stripped
 GameObject:
@@ -792,20 +772,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7498245962061015156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590072470925884754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8aea6f72588b148a1c8b00abbf8d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sittingOffset: {x: 0, y: 0.308, z: 0.048}
-  smokeEffect: {fileID: 6813416509558619124, guid: 3b7f2c753d435d647a80f1f047a113e3, type: 3}
 --- !u!4 &4222598852391364584 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4968002173159936299, guid: 0c554a19f0ccd7448b960abe8ad8ca7a, type: 3}
