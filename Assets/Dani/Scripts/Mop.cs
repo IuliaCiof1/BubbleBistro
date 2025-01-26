@@ -13,6 +13,7 @@ public class MopBehavior : MonoBehaviour
         {
             if (currentDirt.CompareTag("Bubble"))
             {
+                Stats.mess--;
                 Destroy(currentDirt);
                 currentDirt = null;
 

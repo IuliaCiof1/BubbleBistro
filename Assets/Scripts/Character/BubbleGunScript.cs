@@ -25,6 +25,7 @@ public class BubbleGun : MonoBehaviour
                 {
                     // Create the bubble at the hit position
                     Instantiate(bubblePrefab, hitPoint, Quaternion.identity);
+                    Stats.mess++;
                 }
             }
 
