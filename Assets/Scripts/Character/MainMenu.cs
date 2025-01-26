@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public float fadeDuration = 1f;
     [SerializeField] private GameObject VolumeUI;
     [SerializeField] private GameObject MenuUI;
+    [SerializeField] private GameObject InstructionUI;
     #endregion
 
     #region - Default Methods
@@ -57,6 +58,11 @@ public class MainMenu : MonoBehaviour
     public void ToggleVolumeMenu(bool showVolume)
     {
         VolumeUI.SetActive(showVolume);
+        MenuUI.SetActive(!showVolume);
+    }
+    public void ToggleInstruction(bool showVolume)
+    {
+        InstructionUI.SetActive(showVolume);
         MenuUI.SetActive(!showVolume);
     }
     #endregion

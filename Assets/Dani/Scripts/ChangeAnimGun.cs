@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChangeAnimGun : MonoBehaviour
 {
-    [SerializeField] public AudioClip[] LightPopAudio;
+    [SerializeField] public AudioClip[] BubbleAudio;
     private Animator animator;
     [SerializeField] private string boolParameterName = "SweepBool";
     public ParticleSystem gunParticleSystem;
@@ -41,7 +41,7 @@ public class ChangeAnimGun : MonoBehaviour
 
             if (timer >= delay)
             {
-                SoundFXManager.instance.PlaySoundFXClips(LightPopAudio, transform, 1f); 
+                SoundFXManager.instance.PlaySoundFXClips(BubbleAudio, transform, 1f); 
                 timer = 0f; 
             }
         }

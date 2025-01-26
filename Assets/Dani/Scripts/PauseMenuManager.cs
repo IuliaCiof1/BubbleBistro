@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuCanvas;
@@ -64,6 +64,6 @@ public class PauseManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Debug.Log("Returning to the main menu...");
-        //SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Main Menu");
     }
 }

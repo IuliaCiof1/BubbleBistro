@@ -24,7 +24,8 @@ public class BubbleGun : MonoBehaviour
                 if (!IsBubbleAtPosition(hitPoint))
                 {
                     // Create the bubble at the hit position
-                    Instantiate(bubblePrefab, hitPoint, Quaternion.identity);
+                    Quaternion rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                    Instantiate(bubblePrefab, hitPoint, rotation);
                     Stats.mess++;
                 }
             }

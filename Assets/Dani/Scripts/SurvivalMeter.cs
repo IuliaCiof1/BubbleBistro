@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class SurvivalMeter : MonoBehaviour
 {
     public Slider slider;
-    public float timerDuration = 300f;
+    public float timerDuration;
     public GameObject endMenuCanvas;
     private float currentTime;
     public Controller player;

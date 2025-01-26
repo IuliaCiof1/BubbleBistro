@@ -24,7 +24,7 @@ public class Plate_Cleanable : ICleanable
             int randomSpawn = Random.Range(0, 2);
             if (randomSpawn == 1)
             {
-                Stats.mess++;
+                Stats.mess = Stats.mess + 4;
                 plates = Instantiate(platesPrefab, transform);
             }
         }
